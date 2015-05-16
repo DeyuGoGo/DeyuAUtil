@@ -9,8 +9,8 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 21
-        versionCode 1
-        versionName "1.0"
+        versionName project.VERSION_NAME
+        versionCode Integer.parseInt(project.VERSION_CODE)
         resourcePrefix "DeyuAUtil"
     }
     buildTypes {
@@ -28,21 +28,21 @@ dependencies {
 
 //Upload to jcenter
 
-def siteUrl = 'https://github.com/DeyuGoGo/DeyuAUtil'      // 项目的主页
-def gitUrl = 'https://github.com/DeyuGoGo/DeyuAUtil.git'   // Git仓库的url
+def siteUrl = 'https://github.com/DeyuGoGo/DeyuAUtil'
+def gitUrl = 'https://github.com/DeyuGoGo/DeyuAUtil.git'
 group = "go.deyu"
 
 install {
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters
         pom {
-            groupId = 'com.blundell'
-            artifactId = 'my-library-example'
-            version = '1.0.0'
+            groupId = 'go.deyu'
+            artifactId = 'util'
+            version = '1.0.1'
             project {
                 packaging 'aar'
                 // Add your description here
-                name 'Deyu Android Util'
+                name 'DeyuAndroidUtil'
                 url siteUrl
                 // Set your license
                 licenses {
@@ -98,12 +98,12 @@ bintray {
         licenses = ["Apache-2.0"]
         publish = true
         issueTrackerUrl = 'https://github.com/DeyuGoGo/DeyuAUtil/issues'
-        labels = ['WebSocket', 'Java']
+        labels = ['Android']
         publicDownloadNumbers = true
         version {
-            name = '1.0.0' //Bintray logical version name
+            name = '1.0.1' //Bintray logical version name
             desc = 'Init'
-            vcsTag = '1.0.0'
+            vcsTag = '1.0.1'
         }
     }
 }
