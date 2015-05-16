@@ -36,6 +36,9 @@ install {
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters
         pom {
+            groupId = 'com.blundell'
+            artifactId = 'my-library-example'
+            version = '1.0.0'
             project {
                 packaging 'aar'
                 // Add your description here
@@ -94,5 +97,13 @@ bintray {
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
         publish = true
+        issueTrackerUrl = 'https://github.com/DeyuGoGo/DeyuAUtil/issues'
+        labels = ['WebSocket', 'Java']
+        publicDownloadNumbers = true
+        version {
+            name = '1.0.0' //Bintray logical version name
+            desc = 'Init'
+            vcsTag = '1.0.0'
+        }
     }
 }
