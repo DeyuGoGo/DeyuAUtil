@@ -7,6 +7,9 @@ public class LOG {
     public static boolean DEBUG = true;
     public static String LOGTAG = "[Undefine]";
 
+    public static void initLOG(String appName){
+        LOGTAG = "[" + appName + "]";
+    }
     
     public static void v(String TAG, String Info) {
         if (DEBUG) Log.v(LOGTAG + TAG,  Info);
