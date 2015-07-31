@@ -7,7 +7,7 @@ public class ClassUtil {
 
     private static String TAG = "ClassUtil";
 
-    public static void showClassInfo(Class c){
+    public static void showClassInfo(Class<?> c){
         StringBuilder sb = new StringBuilder();
         sb.append("*****---Class Info---*****");
         sb.append("\n");
