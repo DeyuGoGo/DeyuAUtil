@@ -2,6 +2,19 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
+
+
+//Upload to jcenter
+
+def siteUrl = project.POM_SCM_URL
+def gitUrl =  project.POM_SCM_CONNECTION
+def group = project.GROUP
+def artifact = project.ArtifactId
+def VerName = project.VERSION_NAME
+def VerCode = project.VERSION_CODE
+def POM_LICENCE_NAME = project.POM_LICENCE_NAME
+def POM_LICENCE_URL = project.POM_LICENCE_URL
+
 android {
     compileSdkVersion 21
     buildToolsVersion "21.1.2"
@@ -9,8 +22,8 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 21
-        versionName project.VERSION_NAME
-        versionCode Integer.parseInt(project.VERSION_CODE)
+        versionName VerName
+        versionCode Integer.parseInt(VerCode)
         resourcePrefix "DeyuAUtil"
     }
     buildTypes {
@@ -38,6 +51,7 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.3'
+    compile 'com.android.support:support-annotations:22.2.0'
 
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.0'
     androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
@@ -46,19 +60,14 @@ dependencies {
     androidTestCompile 'org.mockito:mockito-core:2.0.5-beta'
 }
 
-//Upload to jcenter
-
-def siteUrl = 'https://github.com/DeyuGoGo/DeyuAUtil'
-def gitUrl = 'https://github.com/DeyuGoGo/DeyuAUtil.git'
-group = "go.deyu"
 
 install {
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters
         pom {
-            groupId = 'go.deyu'
-            artifactId = 'util'
-            version = '1.0.1'
+            groupId = group
+            artifactId = artifact
+            version = VerName
             project {
                 packaging 'aar'
                 // Add your description here
@@ -67,8 +76,8 @@ install {
                 // Set your license
                 licenses {
                     license {
-                        name 'The Apache Software License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        name POM_LICENCE_NAME
+                        url POM_LICENCE_URL
                     }
                 }
                 developers {
@@ -121,9 +130,9 @@ bintray {
         labels = ['Android']
         publicDownloadNumbers = true
         version {
-            name = '1.0.1' //Bintray logical version name
-            desc = 'Init'
-            vcsTag = '1.0.1'
+            name = VerName //Bintray logical version name
+            desc = 'Add Class Util'
+            vcsTag = VerName
         }
     }
 }
