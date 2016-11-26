@@ -5,7 +5,8 @@ apply plugin: 'com.jfrog.bintray'
 
 
 //Upload to jcenter
-
+version = VERSION_NAME
+group = GROUP
 def siteUrl = project.POM_SCM_URL
 def gitUrl =  project.POM_SCM_CONNECTION
 def group = project.GROUP
@@ -16,12 +17,12 @@ def POM_LICENCE_NAME = project.POM_LICENCE_NAME
 def POM_LICENCE_URL = project.POM_LICENCE_URL
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.2"
+    compileSdkVersion 25
+    buildToolsVersion "25.0.1"
 
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 21
+        targetSdkVersion 25
         versionName VerName
         versionCode Integer.parseInt(VerCode)
         resourcePrefix "DeyuAUtil"
@@ -50,10 +51,10 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:21.0.3'
-    compile 'com.android.support:support-annotations:22.2.0'
+    compile 'com.android.support:appcompat-v7:25.0.1'
+    compile 'com.android.support:support-annotations:25.0.1'
 
-    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.0'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
     androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
     androidTestCompile 'com.google.dexmaker:dexmaker:1.2'
     androidTestCompile 'com.google.dexmaker:dexmaker-mockito:1.2'
