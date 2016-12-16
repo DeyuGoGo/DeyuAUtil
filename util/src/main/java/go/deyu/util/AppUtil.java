@@ -1,6 +1,7 @@
 package go.deyu.util;
 
 import android.content.Context;
+import android.os.Bundle;
 
 public class AppUtil {
     private static volatile AppUtil INSTANCE;
@@ -32,6 +33,18 @@ public class AppUtil {
     public String getApplicationName() {
         int stringId = appContext.getApplicationInfo().labelRes;
         return appContext.getString(stringId);
+    }
+
+    public static String showBundleData(Bundle bundle){
+        StringBuffer sb = new StringBuffer();
+        if (bundle != null) {
+            for (String key : bundle.keySet()) {
+                Object value = bundle.get(key);
+                sb.append(String.format("%s %s (%s)", key,
+                        value.toString(), value.getClass().getName()));
+            }
+        }
+        return sb.toString();
     }
 
 }
