@@ -9,29 +9,34 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     tools:context="go.deyu.test.MainActivity">
-
-    <android.support.design.widget.CoordinatorLayout
+    <WebView
+        android:id="@+id/web"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/check"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Check USB devices" />
+    </WebView>
+    <!--<android.support.design.widget.CoordinatorLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+<!--&lt;!&ndash;&ndash;&gt;-->
+        <!--<Button-->
+            <!--android:id="@+id/check"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Check USB devices" />-->
+<!--&lt;!&ndash;&ndash;&gt;-->
+        <!--<TextView-->
+            <!--android:id="@+id/info"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
+<!--&lt;!&ndash;&ndash;&gt;-->
+        <!--<EditText-->
+            <!--android:id="@+id/editText"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="86dp"-->
+            <!--android:ems="10"-->
+            <!--android:inputType="textPassword" />-->
 
-        <TextView
-            android:id="@+id/info"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
 
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="wrap_content"
-            android:layout_height="86dp"
-            android:ems="10"
-            android:inputType="textPassword" />
-
-
-    </android.support.design.widget.CoordinatorLayout>
+    <!--</android.support.design.widget.CoordinatorLayout>-->
 </LinearLayout>
