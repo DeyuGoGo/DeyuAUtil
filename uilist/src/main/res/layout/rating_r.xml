@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/rating_img_heart"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_23sdp"
+        android:background="@drawable/heart_selector"/>
+
+    <TextView
+        android:id="@+id/rating_text_like_count"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_23sdp"
+        android:layout_marginLeft="4dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/rating_text_selector"
+        android:textSize="16sp"
+        tools:text="x1"/>
+</LinearLayout>
